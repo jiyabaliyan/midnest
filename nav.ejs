@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    .custom-navbar {
+        background: linear-gradient(135deg, #198754, #0d6efd);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .navbar-nav .nav-link {
+        color: white !important;
+        padding: 10px 16px !important;
+        margin: 0 3px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-3px);
+    }
+
+    .login-btn {
+        border-radius: 30px;
+        padding: 8px 20px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .login-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .doctor-badge-btn {
+        border-radius: 30px;
+        padding: 8px 18px;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.18);
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .doctor-badge-btn:hover {
+        background-color: #ffffff;
+        color: #0d6efd !important;
+        transform: scale(1.05);
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+    <div class="container">
+
+        <!-- Brand Logo / Name -->
+        <a class="navbar-brand fw-bold text-white" href="/">
+            <i class="fas fa-hospital-user me-2"></i>MediNest
+        </a>
+
+        <!-- Mobile Button -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="fas fa-house me-1"></i> Home
+                    </a>
+                </li>
+
+                <% if (user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/appointments">
+                            <i class="fas fa-calendar-check me-1"></i> Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicines">
+                            <i class="fas fa-pills me-1"></i> Medicines
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medical-history">
+                            <i class="fas fa-notes-medical me-1"></i> Medical History
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/prescriptions">
+                            <i class="fas fa-file-prescription me-1"></i> Prescriptions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/query">
+                            <i class="fas fa-circle-question me-1"></i> Help/Query
+                        </a>
+                    </li>
+                <% } %>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">
+                        <i class="fas fa-address-book me-1"></i> Contact
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Right Side Controls: Doctor Desk + Auth Actions -->
+            <div class="d-flex align-items-center gap-2">
+                <!-- Doctor Desk Direct Link -->
+                <a href="/doctor/portal" class="doctor-badge-btn me-1">
+                    <i class="fas fa-user-doctor me-1"></i> Doctor Desk
+                </a>
+
+                <% if (!user) { %>
+                    <a href="/login" class="btn btn-light login-btn">
+                        <i class="fas fa-right-to-bracket me-1"></i> Login
+                    </a>
+                    <a href="/register" class="btn btn-warning login-btn text-dark">
+                        <i class="fas fa-user-plus me-1"></i> Register
+                    </a>
+                <% } else { %>
+                    <span class="text-white fw-semibold me-2">
+                        <i class="fas fa-user-circle me-1"></i> <%= user.name %>
+                    </span>
+                    <a href="/logout" class="btn btn-light login-btn">
+                        <i class="fas fa-right-from-bracket me-1"></i> Logout
+                    </a>
+                <% } %>
+            </div>
+
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,117 @@
+<%- include('head') %>
+<%- include('nav') %>
+
+<style>
+    .contact-card {
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+    }
+
+    .contact-header {
+        background: linear-gradient(135deg, #198754, #0d6efd);
+        color: white;
+        padding: 30px;
+    }
+
+    .info-tile {
+        padding: 18px;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        transition: 0.3s;
+    }
+
+    .info-tile:hover {
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-color: #cbd5e1;
+    }
+
+    .tile-icon {
+        font-size: 1.4rem;
+        color: #0d6efd;
+    }
+</style>
+
+<div class="container py-5" style="max-width: 900px;">
+    <div class="card contact-card">
+        
+        <!-- Header -->
+        <div class="contact-header text-center">
+            <h3 class="fw-bold mb-1"><i class="fas fa-hospital me-2"></i>Contact MediNest Center</h3>
+            <p class="mb-0 opacity-75">We are here to assist with appointments, emergency services, and inquiries.</p>
+        </div>
+
+        <div class="card-body p-4 p-md-5">
+            <div class="row g-4">
+
+                <!-- Emergency Helpline -->
+                <div class="col-md-6">
+                    <div class="info-tile d-flex align-items-center">
+                        <div class="tile-icon text-danger me-3">
+                            <i class="fas fa-truck-medical fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1 text-danger">Emergency & Ambulance</h6>
+                            <p class="mb-0 text-muted">Dial: <strong>108 / 112</strong> (24x7 Available)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Helpline -->
+                <div class="col-md-6">
+                    <div class="info-tile d-flex align-items-center">
+                        <div class="tile-icon text-success me-3">
+                            <i class="fas fa-phone-volume fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Appointment Desk</h6>
+                            <p class="mb-0 text-muted">+91 98765 43210</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Address -->
+                <div class="col-md-6">
+                    <div class="info-tile d-flex align-items-center">
+                        <div class="tile-icon text-primary me-3">
+                            <i class="fas fa-location-dot fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Hospital Location</h6>
+                            <p class="mb-0 text-muted">MediNest Medical Plaza, Knowledge Park, Block B</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Inquiries -->
+                <div class="col-md-6">
+                    <div class="info-tile d-flex align-items-center">
+                        <div class="tile-icon text-primary me-3">
+                            <i class="fas fa-envelope-open-text fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Email Support</h6>
+                            <p class="mb-0 text-muted">support@medinest.local</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Hospital Hours -->
+            <div class="text-center">
+                <h6 class="fw-bold text-dark mb-2"><i class="fas fa-clock text-primary me-2"></i>Outpatient Department (OPD) Schedule</h6>
+                <p class="text-muted mb-0">Monday to Saturday: <strong>08:00 AM - 08:00 PM</strong> | Sunday: <strong>Specialist on Call</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
